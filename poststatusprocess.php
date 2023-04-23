@@ -38,7 +38,9 @@
                 radio VARCHAR(10),
                 chosen_date VARCHAR(10),
                 checkbox VARCHAR(50)
-                )";
+                );";
+            
+            fwrite($fp, $sql_table . PHP_EOL);
 
             $statuscode = $_POST['statuscode'];
             $status = $_POST['status'];
@@ -46,9 +48,11 @@
             $date = $_POST['date'];
             $list_checkbox = $_POST['checkbox'];
             $checkbox = implode(",", $list_checkbox);
-            $select_table = "SELECT * FROM PostStatus WHERE statuscode = '$statuscode'";
-            $num_rows = mysqli_num_rows(mysqli_query($conn, $sql_table));
+            $select_query = "SELECT * FROM PostStatus WHERE statuscode = '$statuscode';";
+            $num_rows = mysqli_num_rows(mysqli_query($conn, $select_query));
             $pattern = "/[0-9A-Za-z.,?! ]+$/";
+            
+            fwrite($fp, $select_query . PHP_EOL);
 
             if ($conn->query($sql_table) === FALSE) {
                 echo "<p>Table is not created successfully</p>";
@@ -66,9 +70,9 @@
                 } elseif (empty($date)) {
                     echo "<p>Please fill in date</p>";
                 } else {
-                    $sql_query = "INSERT INTO PostStatus (statuscode, content_status, radio, chosen_date, checkbox) VALUES ('$statuscode', '$status', '$share', '$date', '$checkbox')";
+                    $sql_query = "INSERT INTO PostStatus (statuscode, content_status, radio, chosen_date, checkbox) VALUES ('$statuscode', '$status', '$share', '$date', '$checkbox');";
                     $query_result = mysqli_query($conn, $sql_query);
-                    fwrite($fp, $sql_query . ";" . PHP_EOL);
+                    fwrite($fp, $sql_query . PHP_EOL);
                     if (!$query_result) {
                         echo "<p>Unable to insert the record</p>";
                         fclose($fp);
