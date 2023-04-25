@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, charset=utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Web Development Assignment 1</title>
 </head>
@@ -35,7 +35,7 @@
                 id MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                 statuscode VARCHAR(5) NOT NULL UNIQUE,
                 content_status VARCHAR(100) NOT NULL,
-                radio VARCHAR(10),
+                share VARCHAR(10),
                 chosen_date VARCHAR(10),
                 checkbox VARCHAR(50)
                 );";
@@ -58,7 +58,7 @@
                 echo "<p>Table is not created successfully</p>";
             } else {
                 if (strlen($statuscode) != 5 || substr($statuscode, 0, 1) != "S") {
-                    echo "<p>Wrong format! The status code must start with an “S” followed by four digits, like “S0001”.</p>";
+                    echo "<p>Wrong format! The status code must start with an “S” followed by four digits, like \"S0001\".</p>";
                 } elseif (empty($statuscode)) {
                     echo "<p>Please fill in statuscode</p>";
                 } elseif ($num_rows > 0) {
@@ -70,7 +70,7 @@
                 } elseif (empty($date)) {
                     echo "<p>Please fill in date</p>";
                 } else {
-                    $sql_query = "INSERT INTO PostStatus (statuscode, content_status, radio, chosen_date, checkbox) VALUES ('$statuscode', '$status', '$share', '$date', '$checkbox');";
+                    $sql_query = "INSERT INTO PostStatus (statuscode, content_status, share, chosen_date, checkbox) VALUES ('$statuscode', '$status', '$share', '$date', '$checkbox');";
                     $query_result = mysqli_query($conn, $sql_query);
                     fwrite($fp, $sql_query . PHP_EOL);
                     if (!$query_result) {
