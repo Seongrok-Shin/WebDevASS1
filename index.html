@@ -1,30 +1,42 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" >
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, charset=utf-8">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Web Development Assignment 1</title>
 </head>
-<body>
-    <h1 class="text-3xl font-bold font-sans">Status Positng System</h1>
-    <p>Name: Seongrok Shin</p>
-    <p>Student Username: rpy1983</p>
-    <p>Email: rpy1983@autuni.ac.nz</p>
-    <p>I declare that this assignment is my individual work. I have not worked collaboratively, nor have I
-        copied from any other student's work or from any other source </p>
-    
-    <a href="http://rpy1983.cmslamp14.aut.ac.nz/assign1/poststatusform.php">
-        Post a new status
-    </a>
-    <div class = "container">
 
-        <a href="http://rpy1983.cmslamp14.aut.ac.nz/assign1/searchstatusform.html">
-            Search Status
-        </a>
-        
-        <a href="http://rpy1983.cmslamp14.aut.ac.nz/assign1/about.html">
-            About this assignemnt
-        </a>
+<body>
+    <div class="h-screen items-center justify-center">
+        <h1 class="text-3xl font-bold font-sans ">Status Positng System</h1>
+        <p>Name: Seongrok Shin</p>
+        <p>Student Username: rpy1983</p>
+        <p>Email: rpy1983@autuni.ac.nz</p>
+        <p>I declare that this assignment is my individual work. I have not worked collaboratively, nor have I
+            copied from any other student's work or from any other source </p>
+    </div>
+    <div class="h-screen flex items-center justify-center">
+        <div class="antialiased mx-auto my-12 px-8">
+            <div class="relative block md:flex items-center">
+                <button class="py-2 px-4 font-semibold rounded-lg shadow-md
+                            text-white bg-green-500 hover:bg-green-700" onclick="location.href='poststatusform.php'">
+                    Post a new status
+                </button>
+                <span class="inline-block px-3 py-1"></span>
+                <button class="py-2 px-4 font-semibold rounded-lg shadow-md
+                        text-white bg-green-500 hover:bg-green-700" onclick="location.href='searchstatusform.html'">
+                    Search Staus
+                </button>
+                <span class="inline-block px-3 py-1"></span>
+                <button class="py-2 px-4 font-semibold rounded-lg shadow-md
+                        text-white bg-green-500 hover:bg-green-700" onclick="location.href='about.html'">
+                    About this assignment
+                </button>
+            </div>
+        </div>
+    </div>
     </div>
 </body>
+
 </html>

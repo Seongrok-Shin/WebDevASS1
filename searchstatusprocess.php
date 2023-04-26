@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, charset=utf-8">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Web Development Assignment 1</title>
 </head>
 <body>
@@ -11,7 +11,7 @@
         <?php
             $homepage = '<a href="http://rpy1983.cmslamp14.aut.ac.nz/assign1/"><input class="text-white px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800" type="submit" value = "Homepage"/></a>';
             $searchingpage = '<a href="http://rpy1983.cmslamp14.aut.ac.nz/assign1/searchstatusform.html"><input class="text-white px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800" type="submit" value = "Search Page"/></a>';
-            $postingpage = '<a href="http://rpy1983.cmslamp14.aut.ac.nz/assign1/poststatusform.php"><input class="text-white px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800" type="submit" value = "Post Status Page"/></a>';
+            $postingpage = '<a href="http://rpy1983.cmslamp14.aut.ac.nz/assign1/$table_nameform.php"><input class="text-white px-4 sm:px-8 py-2 sm:py-3 bg-sky-700 hover:bg-sky-800" type="submit" value = "Post Status Page"/></a>';
             $search = $_GET['Search'];
             $fp = fopen("sqlscript.txt", "a+");
             if(empty($search) || ctype_space($search)){
@@ -26,7 +26,7 @@
                     $pswd,
                     $dbnm
                 );
-                $select_table = "SELECT * FROM PostStatus;";
+                $select_table = "SELECT * FROM $table_name;";
                 $is_exist = mysqli_query($conn,$select_table);
                 fwrite($fp,$select_table . PHP_EOL);
 
@@ -36,7 +36,7 @@
                     echo $postingpage;
                     echo $searchingpage;
                 } else{
-                    $sql_query = "SELECT * FROM PostStatus WHERE content_status LIKE '%".$search."%';";
+                    $sql_query = "SELECT * FROM $table_name WHERE content_status LIKE '%".$search."%';";
                     fwrite($fp, $sql_query . PHP_EOL);
 
                     $query_result = mysqli_query($conn,$sql_query);

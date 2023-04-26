@@ -3,7 +3,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Web Development Assignment 1</title>
 </head>
 
@@ -31,7 +31,7 @@
             echo "<p>Database connection successful</p>";
             $fp = fopen("sqlscript.txt", "a+") or die("Unable to open file!");
 
-            $sql_table = "CREATE TABLE IF NOT EXISTS PostStatus (  
+            $sql_table = "CREATE TABLE IF NOT EXISTS $table_name (  
                 id MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                 statuscode VARCHAR(5) NOT NULL UNIQUE,
                 content_status VARCHAR(100) NOT NULL,
@@ -48,7 +48,7 @@
             $date = $_POST['date'];
             $list_checkbox = $_POST['checkbox'];
             $checkbox = implode(",", $list_checkbox);
-            $select_query = "SELECT * FROM PostStatus WHERE statuscode = '$statuscode';";
+            $select_query = "SELECT * FROM $table_name WHERE statuscode = '$statuscode';";
             $num_rows = mysqli_num_rows(mysqli_query($conn, $select_query));
             $pattern = "/[0-9A-Za-z.,?! ]+$/";
             
@@ -70,7 +70,7 @@
                 } elseif (empty($date)) {
                     echo "<p>Please fill in date</p>";
                 } else {
-                    $sql_query = "INSERT INTO PostStatus (statuscode, content_status, share, chosen_date, checkbox) VALUES ('$statuscode', '$status', '$share', '$date', '$checkbox');";
+                    $sql_query = "INSERT INTO $table_name (statuscode, content_status, share, chosen_date, checkbox) VALUES ('$statuscode', '$status', '$share', '$date', '$checkbox');";
                     $query_result = mysqli_query($conn, $sql_query);
                     fwrite($fp, $sql_query . PHP_EOL);
                     if (!$query_result) {
@@ -80,6 +80,7 @@
                         echo "<p>Record is posted successfully</p>";
                         fclose($fp);
                     }
+                    mysqli_free_result($query_result);
                 }
             }
             mysqli_close($conn);

@@ -2,18 +2,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" >
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, charset=utf-8">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Web Development Assignment 1</title>
 </head>
 <body>
     <h1 class="px-6 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">About</h1>
-    <a href="#" class="p-6 block max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <h5 class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">What special features have you done or attempted in creating the website?</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">Using tailwind CSS is helping me creative design and looks like more user friendly.</p>
-    </a>
-    <button class="py-2 px-4 font-semibold rounded-lg shadow-md
-    text-white bg-green-500 hover:bg-green-700"
-        onclick="location.href='index.html'">
-        Homepage
-    </button>
+    <div class="antialiased mx-auto my-12 px-8">
+        <div class="relative block md:flex items-center">
+            <div class="p-6 block max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <li class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">What special features have you done or attempted in creating the website?</li>
+                    <hr />
+                    <p class="text-gray-700 text-base">
+                        Using tailwind CSS is helping me creative design and looks like more user friendly.
+                    </p>
+            </div>
+            <span class="inline-block px-3 py-1"></span>
+            <div class="p-6 block max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <li class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Which part(s) did you have trouble with?</li>
+                    <hr />
+                    <p class="text-gray-700 text-base">I forgot to comment each commands, as a consequence, I would not estimate time well.</p>
+                    <p class="text-gray-700 text-base">I was first time to use tailwindcss. Consequently, it took a time more to learn.</p>
+                    <p class="text-gray-700 text-base">I have not known about query well, so I tried to find it out with w3schools.</p>
+            </div>
+            <span class="inline-block px-3 py-1"></span>
+            <div class="p-6 block max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <li class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">What would you like to do better next time?</li>
+                    <hr />
+                    <p class="text-gray-700 text-base">I would estimate and organize time well.</p>
+                    <p class="text-gray-700 text-base">I would try better structures.</p>
+                    <p class="text-gray-700 text-base">I would follow lectures and labs more.</p>
+            </div>
+            <span class="inline-block px-3 py-1"></span>
+            <div class="p-6 block max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <li class="mb-4 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">What you have learnt along the way? Did you use any references or resources during this
+                    project? If so, please include the sources.</li>
+                    <hr />
+                    <p class="text-gray-700 text-base">I learnt how to use tailwindcss.</p>
+                    <p class="text-gray-700 text-base">I learnt how to control query with php.</p>
+                    <p class="text-gray-700 text-base">I learnt how to version control with GUI git.</p>
+            </div>
+        </div>
+    </div>
+    <div class="antialiased mx-auto my-12 px-8">
+        <div class="relative block md:flex items-center">   
+            <button class="py-2 px-4 font-semibold rounded-lg shadow-md
+            text-white bg-green-500 hover:bg-green-700"
+            onclick="location.href='index.html'">
+            Homepage
+            </button>
+
+            <form method="post" action="resetdb.php">
+                <input type="submit" name="reset" value="RESET DATABASE" class="py-2 px-4 font-semibold rounded-lg shadow-md
+                text-white bg-green-500 hover:bg-green-700" >
+                </input>
+            </form>
+        </div>
+    </div>
+
 </body>
