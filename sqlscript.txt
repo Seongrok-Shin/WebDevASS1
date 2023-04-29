@@ -1,0 +1,48 @@
+CREATE TABLE IF NOT EXISTS post_status (  
+                id MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                statuscode VARCHAR(5) NOT NULL UNIQUE,
+                content_status VARCHAR(100) NOT NULL,
+                share VARCHAR(10),
+                chosen_date VARCHAR(10),
+                checkbox VARCHAR(50)
+                );
+SELECT * FROM post_status WHERE statuscode = 'S0001';
+INSERT INTO post_status (statuscode, content_status, share, chosen_date, checkbox) VALUES ('S0001', 'Doing Task 6', 'public', '26/04/2023', 'Allow like');
+SELECT * FROM post_status;
+SELECT * FROM post_status WHERE content_status LIKE '%d%';
+SELECT * FROM post_status;
+SELECT * FROM post_status;
+SELECT * FROM post_status;
+SELECT * FROM post_status;
+CREATE TABLE IF NOT EXISTS post_status (  
+                id MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                statuscode VARCHAR(5) NOT NULL UNIQUE,
+                content_status VARCHAR(100) NOT NULL,
+                share VARCHAR(10),
+                chosen_date VARCHAR(10),
+                checkbox VARCHAR(50)
+                );
+SELECT * FROM post_status WHERE statuscode = 'S0002';
+INSERT INTO post_status (statuscode, content_status, share, chosen_date, checkbox) VALUES ('S0002', 'Doing Task 6', '', '26/04/2023', '');
+SELECT * FROM post_status;
+SELECT * FROM post_status WHERE content_status LIKE '%s%';
+SELECT * FROM post_status;
+SELECT * FROM post_status WHERE content_status LIKE '%ff%';
+SELECT * FROM post_status;
+SELECT * FROM post_status WHERE content_status LIKE '%d%';
+CREATE TABLE IF NOT EXISTS post_status (  
+                id MEDIUMINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                statuscode VARCHAR(5) NOT NULL UNIQUE,
+                content_status VARCHAR(100) NOT NULL,
+                share VARCHAR(10),
+                chosen_date VARCHAR(10),
+                checkbox VARCHAR(50)
+                );
+SELECT * FROM post_status WHERE statuscode = 'S0001';
+INSERT INTO post_status (statuscode, content_status, share, chosen_date, checkbox) VALUES ('S0001', 'd', '', '26/04/2023', '');
+SELECT * FROM post_status;
+SELECT * FROM post_status WHERE content_status LIKE '%d%';
+SELECT * FROM post_status;
+SELECT * FROM post_status WHERE content_status LIKE '%fasczcx%';
+SELECT * FROM post_status;
+SELECT * FROM post_status WHERE content_status LIKE '%v%';

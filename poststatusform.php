@@ -7,51 +7,66 @@
 </head>
 
 <body>
-    <h1>Status Posting System</h1>
-    <form method="post" action="poststatusprocess.php">
-        <div class="input-container">
-            <label for="statusCode">Status Code:</label>
-            <input type="text" name="statuscode" id="statuscode" required pattern="S\d{4}">
-        </div>
+    <div class="m-10 flex items-center justify-center md:flex-row flex-col">
+        <h1 class="text-3xl font-bold font-sans">Status Posting System</h1>
+    </div>
+    <div class="m-10 flex items-center justify-center md:flex-row flex-col">
 
-        <div class="input-container">
-            <label for="status">Status:</label>
-            <input type="text" name="status" id="status" required pattern="^(?!\s*$)[a-zA-Z0-9,.!? ]+$">
-        </div>
-
-        <div class="input-container">
-            <label>Share:</label>
-            <input type="radio" name="share" value="public" id="public">
-            <label for="public">Public</label>
-            <input type="radio" name="share" value="friends" id="friends">
-            <label for="friends">Friends</label>
-            <input type="radio" name="share" value="onlyme" id="onlyme">
-            <label for="onlyme">Only Me</label>
-        </div>
-
-        <div class="input-container">
-            <label for="date">Date:</label>
-            <input type="text" name="date" id="date" required pattern="\d{2}/\d{2}/\d{4}"
-                title="Date must be in the format of dd/mm/yyyy" value="<?php echo date('d/m/Y'); ?>">
-        </div>
-
-        <div class="input-container">
-            <label>Permission:</label>
-            <input type="checkbox" name="checkbox[]" value="Allow like" id="allowlike">
-            Allow Like
-            <input type="checkbox" name="checkbox[]" value="Allow comments" id="allowcomment">
-            Allow Comments
-            <input type="checkbox" name="checkbox[]" value="Allow share" id="allowshare">
-            Allow Share
-        </div>
-
-        <div class="input-container">
-            <button type="submit">Post</button>
-        </div>
-        <div class="input-container">
-            <a href="http://rpy1983.cmslamp14.aut.ac.nz/assign1/">
-                Return to Home Page
-            </a>
-        </div>
-    </form>
+        <!-- post method to poststatusprocess.php -->
+        <form method="post" action="poststatusprocess.php">
+            <!-- text type to put data into statuscode for query which is required only start with S and 4 digts-->
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="statusCode">Status Code:</label>
+                <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                type="text" name="statuscode" id="statuscode" required pattern="S\d{4}">
+            </div>
+            <!-- text type to put data into status for query which cannot be blank-->
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="status">Status:</label>
+                <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                type="text" name="status" id="status" required pattern="^(?!\s*$)[a-zA-Z0-9,.!? ]+$">
+            </div>
+            <!-- radio type to check the share with public, firends or onlyme -->
+            <div class="flex-col items-center mb-4">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Share:</label>
+                <input class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                type="radio" name="share" value="public" id="public">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="public">Public</label>
+                <input class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                type="radio" name="share" value="friends" id="friends">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="friends">Friends</label>
+                <input class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                type="radio" name="share" value="onlyme" id="onlyme">
+                <label class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300" for="onlyme">Only Me</label>
+            </div>
+            <!-- Date can be edited, and also the pattern required format of dd/mm/yyyy -->
+            <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="date">Date:</label>
+                <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                type="text" name="date" id="date" required pattern="\d{2}/\d{2}/\d{4}"
+                    title="Date must be in the format of dd/mm/yyyy" value="<?php echo date('d/m/Y'); ?>">
+            </div>
+            <!-- Permission is the checkboxes as allowlike, allowcomment, and allowshare. User can check more than one -->
+            <div class="flex-col items-center mb-4">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Permission:</label>
+                <input class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                 type="checkbox" name="checkbox[]" value="Allow like" id="allowlike">
+                Allow Like
+                <input class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                 type="checkbox" name="checkbox[]" value="Allow comments" id="allowcomment">
+                Allow Comments
+                <input class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                 type="checkbox" name="checkbox[]" value="Allow share" id="allowshare">
+                Allow Share
+            </div>
+            <!-- type of submit to post the data into given php file. -->
+            <button class="py-2 px-4 font-semibold rounded-lg shadow-md
+        text-white bg-green-500 hover:bg-green-700" type="submit">Post</button>
+        
+            <button class="py-2 px-4 font-semibold rounded-lg shadow-md
+            text-white bg-green-500 hover:bg-green-700" onclick="location.href='index.html'">
+                Homepage
+            </button>
+        </form>
+    </div>
 </body>

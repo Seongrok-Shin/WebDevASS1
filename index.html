@@ -8,34 +8,41 @@
 </head>
 
 <body>
-    <div class="h-screen items-center justify-center">
-        <h1 class="text-3xl font-bold font-sans ">Status Positng System</h1>
-        <p>Name: Seongrok Shin</p>
-        <p>Student Username: rpy1983</p>
-        <p>Email: rpy1983@autuni.ac.nz</p>
-        <p>I declare that this assignment is my individual work. I have not worked collaboratively, nor have I
-            copied from any other student's work or from any other source </p>
-    </div>
-    <div class="h-screen flex items-center justify-center">
-        <div class="antialiased mx-auto my-12 px-8">
-            <div class="relative block md:flex items-center">
-                <button class="py-2 px-4 font-semibold rounded-lg shadow-md
-                            text-white bg-green-500 hover:bg-green-700" onclick="location.href='poststatusform.php'">
-                    Post a new status
-                </button>
-                <span class="inline-block px-3 py-1"></span>
-                <button class="py-2 px-4 font-semibold rounded-lg shadow-md
-                        text-white bg-green-500 hover:bg-green-700" onclick="location.href='searchstatusform.html'">
-                    Search Staus
-                </button>
-                <span class="inline-block px-3 py-1"></span>
-                <button class="py-2 px-4 font-semibold rounded-lg shadow-md
-                        text-white bg-green-500 hover:bg-green-700" onclick="location.href='about.html'">
-                    About this assignment
-                </button>
+    <!-- deciding padding size -->
+    <div class="p-20">
+        <!-- Put all of them center -->
+        <div class="flex justify-center">
+            <div class="md:w-2/3 lg:w-1/4">
+                <!-- heading as system name -->
+                <h1 class="text-3xl font-bold font-sans">Status Posting System</h1>
+                <p class="text-xl">Name: Seongrok Shin</p>
+                <p class="text-xl">Student Username: rpy1983</p>
+                <p class="text-xl">Email: rpy1983@autuni.ac.nz</p>
+                <p class="text-xl">I declare that this assignment is my individual work. I have not worked collaboratively, nor have I
+                    copied from any other student's work or from any other source </p>
             </div>
         </div>
-    </div>
+        <!-- edit margin to 10 and make button into middle -->
+        <div class="m-10 flex items-center justify-center md:flex-row flex-col">
+            <!-- button to go posting a new status -->
+            <button class="py-2 px-4 font-semibold rounded-lg shadow-md
+                text-white bg-green-500 hover:bg-green-700" onclick="location.href='poststatusform.php'">
+                Post a new status
+            </button>
+            <!-- span for button -->
+            <span class="inline-block px-5 py-1"></span>
+            <!-- button for going search page -->
+            <button class="py-2 px-4 font-semibold rounded-lg shadow-md
+            text-white bg-green-500 hover:bg-green-700" onclick="location.href='searchstatusform.html'">
+                Search Staus
+            </button>
+            <span class="inline-block px-5 py-1"></span>
+            <!-- button for about page -->
+            <button class="py-2 px-4 font-semibold rounded-lg shadow-md
+        text-white bg-green-500 hover:bg-green-700" onclick="location.href='about.html'">
+                About this assignment
+            </button>
+        </div>
     </div>
 </body>
 

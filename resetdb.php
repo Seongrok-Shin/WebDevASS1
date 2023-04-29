@@ -14,25 +14,19 @@
         function drop_table()
         {
             include('../../conf/settings.php');
-
             $conn = @mysqli_connect($host, $user, $pswd, $dbnm);
-            
             if (!$conn) {
                 die("Connection Failure!" . mysqli_connect_error());
             } else {
                 echo "Connect Successfully! <br />";
-                
-                $fp = fopen("sqlscript.txt","a+");
+                //select table to check is_eixst
                 $select_table = "SELECT * FROM $table_name";
                 $is_exist = mysqli_query($conn, $select_table);
-                
-                fwrite($fp,$select_table);
-                
+
                 if (!$is_exist) {
                     die("Failed Reset Database!");
                 } else {
                     $script = "DROP TABLE IF EXISTS $table_name";
-                    fwrite($fp,$script);
                     $result = mysqli_query($conn, $script);
                     if ($result === TRUE) {
                         echo "Successfully Reset Database!";
@@ -40,8 +34,9 @@
                 }
             }
         }
-
+        //Returns `true` if `var` exists and has any value other than `null`
         if (isset($_POST['reset'])) {
+            //called funtion that drop table.
             drop_table();
         }
         ?>
